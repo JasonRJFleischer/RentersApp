@@ -6,9 +6,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <h3>Welcome to Cleveland Legal Hackers' Renters Resource Page!</h3>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          We're not up and running yet, but the Cleveland Legal Hackers
+          are working on building a suite of apps and orientative resources
+          for the public to use in helping with renting.
         </p>
         <a
           className="App-link"
