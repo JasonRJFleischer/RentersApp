@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import data from '../data/data1.json';
 
 class evictionDisplay extends Component {
     constructor(props) {
@@ -17,6 +18,13 @@ class evictionDisplay extends Component {
         }
     };
 
+    componentDidMount() {
+        console.log("component did mount");
+        this.setState({
+            data: data
+        })
+    };
+
     render() {
         return (
             <div>
@@ -24,13 +32,8 @@ class evictionDisplay extends Component {
                 <table className="table">
                     <thead>
                         <tr>
-                            <th scope="col">Address 1</th>
-                            <th scope="col">Address 2</th>
-                            <th scope="col">Address 3</th>
-                            <th scope="col">City</th>
-                            <th scope="col">State</th>
-                            <th scope="col">Zip</th>
-                            <th scope="col">Landlord</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Plaintiff</th>
                             <th scope="col">Filing Date</th>
                             <th scope="col">Move Out Date</th>
                         </tr>
@@ -38,15 +41,16 @@ class evictionDisplay extends Component {
                     <tbody>
                         {this.state.data.map(data => (
                             <tr>
-                                <th scope="row">{data.address1}</th>
-                                <td>{data.address2}</td>
-                                <td>{data.address3}</td>
-                                <td>{data.city}</td>
-                                <td>{data.state}</td>
-                                <td>{data.zip}</td>
+                                <th scope="row">
+                                    {data.address.addressLine1}<br></br>
+                                    {/* {data.address.addressLine2}<br></br>
+                                    {data.address.addressLine3}<br></br> */}
+                                    {data.address.city}<br></br>
+                                    {data.address.state}<br></br>
+                                    {data.address.zip}</th>
                                 <td>{data.plaintiff}</td>
                                 <td>{data.filingDate}</td>
-                                <td>{data.moveOutDate}</td>
+                                <td>{data.moveoutDate}</td>
                             </tr>
                         ))}
                     </tbody>
