@@ -8,6 +8,13 @@ const NavBar = props => {
             <a className="navbar-brand" href='/'>
                 <h3>Cleveland Evictions{" "}</h3>
             </a>
+            <button className="btn btn-sm landlordSearch"
+                onClick={function () {
+                    window.location.replace("/search");
+                }}
+            >
+                Search for Landlord{" "}
+            </button>
         </nav>);
 }
 
