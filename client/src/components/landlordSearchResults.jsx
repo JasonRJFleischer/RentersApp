@@ -35,7 +35,7 @@ class landlordSearchResults extends Component {
     render() {
         return (
             <div>
-                <h4>Eviction</h4>
+                <h4>Evictions Initiated by {localStorage.getItem("plaintiff")}</h4>
                 <table className="table">
                     <thead>
                         <tr>
