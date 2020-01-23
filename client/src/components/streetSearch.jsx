@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 
-class landlordSearch extends Component {
+class streetSearch extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            plaintiff: "",
+            street: "",
         }
     };
 
@@ -26,28 +26,28 @@ class landlordSearch extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        let plaintiff = this.state.plaintiff;
-        localStorage.setItem("plaintiff", plaintiff)
+        let street = this.state.street;
+        localStorage.setItem("street", street)
         console.log(this.state);
-        window.location.replace('/landlordResults')
+        window.location.replace('/streetResults')
     };
 
     render() {
         return (
             <div className="container-fluid">
                 <div className="row">
-                    <h4>Landlord Lookup</h4>
+                    <h4>Street Lookup</h4>
                     <div className="container">
                         <div className="FormCenter">
                             <form onSubmit={this.handleSubmit} className="FormField">
                                 <div className="FormField">
-                                    <label for="plaintiff">Landlord Name</label>
+                                    <label for="street">Street Name</label>
                                     <input
                                         type="text"
                                         className="form-control"
-                                        id="plaintiff"
-                                        name="plaintiff"
-                                        value={this.state.plaintiff}
+                                        id="street"
+                                        name="street"
+                                        value={this.state.street}
                                         onChange={this.handleChange} />
                                 </div>
                                 <br></br>
@@ -71,4 +71,4 @@ class landlordSearch extends Component {
         );
     }
 }
-export default landlordSearch;
+export default streetSearch;

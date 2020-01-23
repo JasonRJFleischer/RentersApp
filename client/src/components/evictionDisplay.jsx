@@ -28,7 +28,7 @@ class evictionDisplay extends Component {
     render() {
         return (
             <div>
-                <h4>Eviction</h4>
+                <h4>Evictions in Cleveland</h4>
                 <table className="table">
                     <thead>
                         <tr>

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 
-class landlordSearch extends Component {
+class addressSearch extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            plaintiff: "",
+            address: "",
         }
     };
 
@@ -26,28 +26,38 @@ class landlordSearch extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        let plaintiff = this.state.plaintiff;
-        localStorage.setItem("plaintiff", plaintiff)
+        let address = this.state.houseNumber + " " + this.state.streetName;
+        localStorage.setItem("address", address)
         console.log(this.state);
-        window.location.replace('/landlordResults')
+        window.location.replace('/addressResults')
     };
 
     render() {
         return (
             <div className="container-fluid">
                 <div className="row">
-                    <h4>Landlord Lookup</h4>
+                    <h4>Street Address Lookup</h4>
                     <div className="container">
                         <div className="FormCenter">
                             <form onSubmit={this.handleSubmit} className="FormField">
                                 <div className="FormField">
-                                    <label for="plaintiff">Landlord Name</label>
+                                    <label for="houseNumber">House Number</label>
                                     <input
                                         type="text"
                                         className="form-control"
-                                        id="plaintiff"
-                                        name="plaintiff"
-                                        value={this.state.plaintiff}
+                                        id="houseNumber"
+                                        name="houseNumber"
+                                        value={this.state.houseNumber}
+                                        onChange={this.handleChange} />
+                                </div>
+                                <div className="FormField">
+                                    <label for="streetName">Street Name (do not include "Avenue," "Street," "Blvd," etc.)</label>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        id="streetName"
+                                        name="streetName"
+                                        value={this.state.streetName}
                                         onChange={this.handleChange} />
                                 </div>
                                 <br></br>
@@ -71,4 +81,4 @@ class landlordSearch extends Component {
         );
     }
 }
-export default landlordSearch;
+export default addressSearch;

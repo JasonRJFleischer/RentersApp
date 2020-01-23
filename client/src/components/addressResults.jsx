@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import data from '../data/data1.json';
 
-class landlordResults extends Component {
+class addressResults extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -20,10 +20,10 @@ class landlordResults extends Component {
 
     componentDidMount() {
         console.log("component did mount");
-        let landlord = localStorage.getItem("plaintiff").toUpperCase();
+        let streetAddress = localStorage.getItem("address").toUpperCase();
         let newData = [];
         for (var i = 0; i < data.length; i++) {
-            if (data[i].plaintiff.includes(landlord)) {
+            if (data[i].address.addressLine1.includes(streetAddress)) {
                 newData.push(data[i])
             }
         }
@@ -35,7 +35,7 @@ class landlordResults extends Component {
     render() {
         return (
             <div>
-                <h4>Evictions Initiated by {localStorage.getItem("plaintiff")}</h4>
+                <h4>Evictions at {localStorage.getItem("address")}</h4>
                 <table className="table">
                     <thead>
                         <tr>
@@ -66,4 +66,4 @@ class landlordResults extends Component {
         );
     }
 }
-export default landlordResults;
+export default addressResults;
