@@ -7,8 +7,10 @@ import landlordSearch from './components/landlordSearch';
 import landlordResults from './components/landlordSearchResults';
 import streetSearch from './components/streetSearch';
 import addressSearch from './components/addressSearch';
+import zipSearch from './components/zipSearch';
 import streetResults from './components/streetResults';
 import addressResults from './components/addressResults';
+import zipResults from './components/zipResults';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
               <Route exact path="/streetResults" component={streetResults} />
               <Route exact path="/addressSearch" component={addressSearch} />
               <Route exact path="/addressResults" component={addressResults} />
+              <Route exact path="/zipSearch" component={zipSearch} />
+              <Route exact path="/zipResults" component={zipResults} />
             </Switch>
           </div>
         </div>

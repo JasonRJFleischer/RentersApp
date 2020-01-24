@@ -20,21 +20,28 @@ const NavBar = props => {
                     window.location.replace("/landlordSearch");
                 }}
             >
-                Search for Landlord{" "}
-            </button>
-            <button className="btn btn-sm streetSearch"
-                onClick={function () {
-                    window.location.replace("/streetSearch");
-                }}
-            >
-                Search for Street Name{" "}
+                Look up Landlord{" "}
             </button>
             <button className="btn btn-sm addressSearch"
                 onClick={function () {
                     window.location.replace("/addressSearch");
                 }}
             >
-                Search for Street Address{" "}
+                Look up Address{" "}
+            </button>
+            <button className="btn btn-sm streetSearch"
+                onClick={function () {
+                    window.location.replace("/streetSearch");
+                }}
+            >
+                Look up Street Name{" "}
+            </button>
+            <button className="btn btn-sm zipSearch"
+                onClick={function () {
+                    window.location.replace("/zipSearch");
+                }}
+            >
+                Look up Zip Code{" "}
             </button>
         </nav>);
 }
