@@ -27,6 +27,11 @@ class streetResults extends Component {
                 newData.push(data[j])
             }
         }
+        if (newData.length === 0) {
+            alert("No records found.");
+            window.location.replace('/')
+            return
+        }
         this.setState({
             data: newData
         })

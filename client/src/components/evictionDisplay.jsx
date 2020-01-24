@@ -36,6 +36,7 @@ class evictionDisplay extends Component {
                             <th scope="col">Plaintiff</th>
                             <th scope="col">Filing Date</th>
                             <th scope="col">Move Out Date</th>
+                            {/* <th scope="col">Tax Info</th> */}
                         </tr>
                     </thead>
                     <tbody>
@@ -51,6 +52,7 @@ class evictionDisplay extends Component {
                                 <td>{data.plaintiff}</td>
                                 <td>{data.filingDate}</td>
                                 <td>{data.moveoutDate}</td>
+                                {/* <td><button>Tax Info</button></td> */}
                             </tr>
                         ))}
                     </tbody>

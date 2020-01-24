@@ -27,6 +27,11 @@ class addressResults extends Component {
                 newData.push(data[i])
             }
         }
+        if (newData.length === 0) {
+            alert("No records found.");
+            window.location.replace('/')
+            return
+        }
         this.setState({
             data: newData
         })
