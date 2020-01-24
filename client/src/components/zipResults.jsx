@@ -21,6 +21,7 @@ class zipResults extends Component {
     componentDidMount() {
         console.log("component did mount");
         let zipCode = localStorage.getItem("zip");
+        localStorage.removeItem("zip");
         let newData = [];
         for (var i = 0; i < data.length; i++) {
             if (data[i].address.zip === zipCode) {

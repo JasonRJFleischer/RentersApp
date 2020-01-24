@@ -21,6 +21,7 @@ class addressResults extends Component {
     componentDidMount() {
         console.log("component did mount");
         let streetAddress = localStorage.getItem("address").toUpperCase();
+        localStorage.removeItem("address");
         let newData = [];
         for (var i = 0; i < data.length; i++) {
             if (data[i].address.addressLine1.includes(streetAddress)) {

@@ -21,6 +21,7 @@ class landlordResults extends Component {
     componentDidMount() {
         console.log("component did mount");
         let landlord = localStorage.getItem("plaintiff").toUpperCase();
+        localStorage.removeItem("plaintiff");
         let newData = [];
         for (var i = 0; i < data.length; i++) {
             if (data[i].plaintiff.includes(landlord)) {

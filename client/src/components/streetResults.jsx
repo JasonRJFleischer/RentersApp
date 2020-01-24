@@ -21,6 +21,7 @@ class streetResults extends Component {
     componentDidMount() {
         console.log("component did mount");
         let street = localStorage.getItem("street").toUpperCase();
+        localStorage.removeItem("street");
         let newData = [];
         for (var j = 0; j < data.length; j++) {
             if (data[j].address.addressLine1.includes(street)) {
