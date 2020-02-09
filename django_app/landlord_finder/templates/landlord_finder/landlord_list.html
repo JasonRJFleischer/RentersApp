@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Landlord List</h1>
+  {% if landlord_list %}
+  <ul>
+    {% for landlord in landlord_list %}
+      <li>
+        {{landlord.name}}
+        {% if landlord.case_set.all %}
+        <ul>
+          </br>
+          {% for address in landlord.case_set.all %}
+          <li>
+          <p>{{address.address.address1}}</p>
+          {% if address.address.address2 %}<p>{{address.address.address2}}</p>{% endif %}
+          {% if address.address.address3 %}<p>{{address.address.address3}}</p>{% endif %}
+          <p>{{address.address.zip_code}}</p>
+          <p>{{address.address.city}}</p>
+          </li>
+          </br></br></br>
+          {% endfor%}
+        </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no landlords in the library.</p>
+  {% endif %}       
+{% endblock %}
