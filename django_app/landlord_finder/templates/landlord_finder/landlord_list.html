@@ -1,31 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Landlord List</h1>
-  {% if landlord_list %}
-  <ul>
-    {% for landlord in landlord_list %}
+<h1>Landlord List</h1>
+{% if landlord_list %}
+<ul>
+  {% for landlord in landlord_list %}
+  <li>
+    {{landlord.name}}
+    {% if landlord.case_set.all %}
+    <ul>
+      {% for address in landlord.case_set.all %}
       <li>
-        {{landlord.name}}
-        {% if landlord.case_set.all %}
-        <ul>
-          </br>
-          {% for address in landlord.case_set.all %}
-          <li>
-          <p>{{address.address.address1}}</p>
-          {% if address.address.address2 %}<p>{{address.address.address2}}</p>{% endif %}
-          {% if address.address.address3 %}<p>{{address.address.address3}}</p>{% endif %}
-          <p>{{address.address.zip_code}}</p>
-          <p>{{address.address.city}}</p>
-          </li>
-          </br></br></br>
-          {% endfor%}
-        </ul>
-        {% endif %}
+        <span>{{address.address.address1}}</span><br>
+        {% if address.address.address2 %}<span>{{address.address.address2}}<br></span>{% endif %}
+        {% if address.address.address3 %}<span>{{address.address.address3}}<br></span>{% endif %}
+        <span>{{address.address.city}}<br></span>
+        <span>{{address.address.zip_code}}<br></span>
       </li>
-    {% endfor %}
-  </ul>
-  {% else %}
-    <p>There are no landlords in the library.</p>
-  {% endif %}       
+      {% endfor%}
+      </br>
+    </ul>
+    {% endif %}
+  </li>
+  {% endfor %}<br>
+</ul>
+{% else %}
+<p>There are no landlords in the library.</p>
+{% endif %}
 {% endblock %}

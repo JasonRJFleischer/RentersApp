@@ -5,6 +5,7 @@ class evictionDisplay extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            caseid: "",
             address1: "",
             address2: "",
             address3: "",
@@ -52,7 +53,6 @@ class evictionDisplay extends Component {
                                 <td>{data.plaintiff}</td>
                                 <td>{data.filingDate}</td>
                                 <td>{data.moveoutDate}</td>
-                                {/* <td><button>Tax Info</button></td> */}
                             </tr>
                         ))}
                     </tbody>
