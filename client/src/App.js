@@ -5,6 +5,7 @@ import evictionDisplay from './components/evictionDisplay';
 import NavBar from './components/navbar.jsx';
 import landlordSearch from './components/landlordSearch';
 import landlordResults from './components/landlordSearchResults';
+import newLandlordResults from './components/newLandlordSearchResults';
 import streetSearch from './components/streetSearch';
 import addressSearch from './components/addressSearch';
 import zipSearch from './components/zipSearch';
@@ -24,6 +25,7 @@ function App() {
               <Route exact path="/" component={evictionDisplay} />
               <Route exact path="/landlordSearch" component={landlordSearch} />
               <Route exact path="/landlordResults" component={landlordResults} />
+              <Route exact path="/newLandlordResults" component={newLandlordResults} />
               <Route exact path="/streetSearch" component={streetSearch} />
               <Route exact path="/streetResults" component={streetResults} />
               <Route exact path="/addressSearch" component={addressSearch} />
