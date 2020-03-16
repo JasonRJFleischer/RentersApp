@@ -17,7 +17,28 @@ const NavBar = props => {
                 >
                     All Evictions{" "}
                 </button>
-                <button className="btn btn-sm landlordSearch"
+                <button className="btn btn-sm allLandlords"
+                    onClick={function () {
+                        window.location.replace("/landlords");
+                    }}
+                >
+                    Landlord Search{" "}
+                </button>
+                <button className="btn btn-sm photoLibrary"
+                    onClick={function () {
+                        window.location.replace("/photoLibrary");
+                    }}
+                >
+                    Photo Library{" "}
+                </button>
+                <button className="btn btn-sm resourceRoom"
+                    onClick={function () {
+                        window.location.replace("/resourceRoom");
+                    }}
+                >
+                    Eviction Resources{" "}
+                </button>
+                {/* <button className="btn btn-sm landlordSearch"
                     onClick={function () {
                         window.location.replace("/landlordSearch");
                     }}
@@ -44,7 +65,7 @@ const NavBar = props => {
                     }}
                 >
                     Look up Zip Code{" "}
-                </button>
+                </button> */}
             </nav >
         </div>)
 }
