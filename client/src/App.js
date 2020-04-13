@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
-// import evictionDisplay from './components/evictionDisplay';
+import evictionDisplay from './components/evictionDisplay';
 import NavBar from './components/navbar.jsx';
 import landlordSearch from './components/landlordSearch';
 import landlordResults from './components/landlordSearchResults';
@@ -28,8 +28,8 @@ function App() {
         <div className="row">
           <div className="col-md-12">
             <Switch>
-              <Route exact path="/" component={Home} />
-              {/* <Route exact path="/" component={evictionDisplay} /> */}
+              {/* <Route exact path="/" component={Home} /> */}
+              <Route exact path="/" component={evictionDisplay} />
               <Route exact path="/landlords" component={Landlords} />
               <Route exact path="/landlordSearch" component={landlordSearch} />
               <Route exact path="/landlordResults" component={landlordResults} />
