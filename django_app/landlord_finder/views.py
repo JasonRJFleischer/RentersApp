@@ -14,8 +14,26 @@ class AddressDetailView(DetailView):
 class LandlordListCreate(APIView):
 
     def get(self, request, format=None):
+        house_num = request.GET.get('house')
+        if house_num:
+            house_num = r'^' + house_num + r'\s'
+
+        params = {
+        "address__zip_code": request.GET.get('zip'),
+        "landlord__name__icontains": request.GET.get('name'),
+        "address__address1__icontains": request.GET.get('street'),
+        "address__address1__iregex": house_num,
+        }
+
+        params = {k: v for (k, v) in params.items() if v is not ""}
+
+        if params:
+            search_results = Case.objects.filter(**params)
+        else:
+            search_results = Case.objects.all()
+        
         data = []
-        for case in Case.objects.all():
+        for case in search_results:
             data.append({
                             "caseID": case.case_id,
                             "address": {
