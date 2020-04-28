@@ -25,7 +25,7 @@ class LandlordListCreate(APIView):
         "address__address1__iregex": house_num,
         }
 
-        params = {k: v for (k, v) in params.items() if v is not ""}
+        params = {k: v for (k, v) in params.items() if v != ""}
 
         if params:
             search_results = Case.objects.filter(**params)
