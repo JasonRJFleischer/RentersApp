@@ -12,6 +12,9 @@ class SearchDB extends Component {
       filingDate: "",
       moveoutDate: "",
       data: [],
+      resultsLength: "",
+      results: false,
+      error: "No results found",
     };
   }
 
@@ -47,6 +50,8 @@ class SearchDB extends Component {
         (res) => {
           this.setState({
             data: res,
+            resultsLength: res.length,
+            results: true,
           });
         },
         (error) => {
@@ -58,7 +63,7 @@ class SearchDB extends Component {
   };
 
   render() {
-    if (this.state.data.length === 0) {
+    if (!this.state.results) {
       return (
         <div className="container-fluid">
           <div className="row">
@@ -133,6 +138,12 @@ class SearchDB extends Component {
           </div>
         </div>
       );
+    } else if (this.state.resultsLength <= 0) {
+      return (
+        <div className="container-fluid">
+          <h5>No results found</h5>
+        </div>
+      );
     } else {
       return (
         <div>
@@ -144,7 +155,6 @@ class SearchDB extends Component {
                 <th scope="col">Address</th>
                 <th scope="col">Filing Date</th>
                 <th scope="col">Move Out Date</th>
-                {/* <th scope="col">Tax Info</th> */}
               </tr>
             </thead>
             <tbody>
